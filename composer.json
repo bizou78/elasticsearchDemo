@@ -1,0 +1,14 @@
+{
+    "name": "bizou/elasticsearch",
+    "description": "test elasticsearch",
+    "authors": [
+        {
+            "name": "Benjamin Jaeger",
+            "email": "benjaminjaeger31@gmail.com"
+        }
+    ],
+    "require": {
+        "elasticsearch/elasticsearch": "^6.0",
+        "monolog/monolog": "^1.23"
+    }
+}
