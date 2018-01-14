@@ -1,0 +1,82 @@
+ELASTICSEARCH
+
+/usr/share/elastisearch/bin
+=> sudo ./elasticsearch
+
+
+KIBANA
+/usr/share/kibana/bin
+=> sudo ./kibana
+
+
+GET _search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+POST /bizou/tutoriels
+{
+  "title": "youtube Data API",
+  "category": "PHP",
+  "tags": ["Youtube", "API", "PHP"],
+  "duration": 600
+}
+
+POST /bizou/tutoriels
+{
+  "title": "Composer",
+  "category": "PHP",
+  "tags": ["PHP", "autoload", "Composer"],
+  "duration": 180
+}
+
+POST /bizou/tutoriels
+{
+  "title": "tuto PHP",
+  "duration": 300
+}
+GET /bizou/tutoriels/zQR9kmAB8e2uLrVgj4IL
+
+PUT /bizou/tutoriels/ywR8kmAB8e2uLrVgA4J6
+{
+  "title": "Facebook API Data",
+  "category": "Facebook",
+  "tags": [
+    "Facebook",
+    "API"],
+  "duration": 60
+}
+
+POST /bizou/tutoriels/_search
+{
+  "query": { 
+    "bool": { 
+      "must": {"query_string": {
+          "query": "Data API"
+        }
+        
+      },
+      "filter": [ 
+        { "range": { "duration": { "lte": 90 }}} 
+      ]
+    }
+  }
+}
+
+POST /bizou/tutoriels/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {"query_string": {
+          "query": "PHP"
+        }}
+      ]
+    }
+  }
+}
+
+DELETE /bizou/tutoriels/Tv0FomABTd0MQdGIt3KG
+
